@@ -1,8 +1,32 @@
 # Getting Started with Create React App
 
+This is my third Mod 2 Project for Per Scholas. The purpose of this project was to create a Trading Criteria checklist utlizing MongoBD database, incorporate CRUD (create, read, update and delete), on a react application. I was inspired by my interest in the forex market. I was taught, if your trading style does not meet all criterias befor entering the trade, don't place the trade. So, I created a checklist to follow the criteria before you enter a trade.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Programming skills used
+
+- JavaScript
+- HTML
+- CSS
+- Express
+- Node
+- MongoDB
+- Mongoose
+- React
+- BootStrap
+
+## Getting Started
+
+You will want to start on github and clone the repository. You go yo you terminal and paste the weblink. After the repo in install, youll want to install all dependency used the the project. After installaction, you will want to restart you server and lastly tun npm run dev to delop the project at local host 3000. 
+
+
+## Unsolved Problems
+
+At the moment, I do not have any errors that I am aware of.
+
+## Future EnHancements
+
+If the future, I like to another page the keep track of time time a trade was place and what pair was traded. This will help to see if there are trading patterning I should pay attention to. 
 
 In the project directory, you can run:
 
