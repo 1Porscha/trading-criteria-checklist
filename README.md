@@ -6,7 +6,7 @@ Please click the link below to view my project on render.
 
 [click render link here](https://trading-criteria-checklist.onrender.com/)
 
-![Please click link to see screenshot of Home Page]([20230308-202705-2.jpg](https://postimg.cc/PNTSrfTD))
+![checklist](https://user-images.githubusercontent.com/117795389/223895275-cf5782ba-35d3-48ff-9ebf-74a78ea53800.png)
 
 ## Programming skills used
 
