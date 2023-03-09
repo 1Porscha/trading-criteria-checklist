@@ -2,8 +2,6 @@
 import axios from 'axios';
 import { set } from 'mongoose';
 import React, { useState, useEffect } from "react";
-// import { Trash3 } from 'bootstrap-icons-react'
-// import { Routes, Route,} from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 
 const Home = () => {
@@ -12,10 +10,6 @@ const Home = () => {
   const[criteriaText, setCriteriaText] = useState("") 
   const[displayCriteria, setDisplayCriteria] = useState([])
   const[editCriteriaValue, seteditCriteriaValue] = useState([])
-// const [criteria, setCriteria] = useState("")
-
-// create a function to add new criteria to database and await response
-// exampl from class, I kept getting errors, so I used it as a reference for below
 
 // create a function to add new criteria to database and await response
 let addCriteria = async (event) => {
@@ -27,15 +21,11 @@ let addCriteria = async (event) => {
     })
     console.log(response.data)
 
-// Add the created criteria object to the state
+    // Add the created criteria object to the state
     // setDisplayCriteria(prev =>[...prev, response.data])
     window.location.reload()
     // setCriteriaText("")
 };
-
-//use UseEffect hook to create a function to display all criteria in database and await response 
-// Fetch criteria data from the server on component mount
-//help from chatGPT
 
 
 //use UseEffect hook to create a function to display all criteria in database and await response 
@@ -72,6 +62,8 @@ let displayAllCriteria = async () =>{
   window.location.reload()
 }
 
+
+//Create a new array and update values and input
 const handleChange = (e, id, index) => {
   const newValue = [...editCriteriaValue]
   console.log(id)
@@ -82,6 +74,8 @@ const handleChange = (e, id, index) => {
   seteditCriteriaValue(newValue)
 }
 
+// create a function to edit criteria from database and await response
+//the updated value represents the updated criteria that the user has enter
 const handleSave = async (e, id, index) => {
   e.preventDefault()
   console.log(id)
@@ -95,8 +89,6 @@ const handleSave = async (e, id, index) => {
   console.log(response)
   // window.location.reload()
 }
-// create a function to edit criteria from database and await response
-//creat new/edit values that will replace the old values in
 
 const handleCheckBox = async (e, id, index) => {
   //change completed in datsbase
@@ -121,7 +113,6 @@ const handleCheckBox = async (e, id, index) => {
         <h1>Trading Criteria Checklist</h1>
       <form className="form" onSubmit={event => addCriteria(event)}> 
         <input type="text" placeholder="Add Criteria" onChange={event => {setCriteriaText(event.target.value)} } value={criteriaText} />
-        {/* <button type="submit">Add</button> */}
         <Button variant="success" type="submit">Add</Button>
       </form>
 
@@ -132,22 +123,14 @@ const handleCheckBox = async (e, id, index) => {
      {
         editCriteriaValue.map((criteria, index) => (
 
-           // <div key={criteria.id}>
           <div key={index}className="criteria-item">
     <form className="update-form" onSubmit={(e) => handleSave(e, criteria._id, index)}>
       <input type="checkbox" checked={editCriteriaValue[index].completed} onChange={(e) => handleCheckBox(e, criteria._id, index)}/> 
       <input className="update-new-input" type="text" value={editCriteriaValue[index].criteria} onChange={(event) => {handleChange(event, editCriteriaValue[index]._id, index)}}  />
       <button className="btn btn-warning" type="edit">Edit</button>
-      
-    </form>
-
-          {/* <p className="criteria-content">{criteria.criteria}</p> */}
-          {/* <button className="update-criteria">Submit</button> */}
+       </form>
           <button className="btn btn-danger" onClick={()=>{deleteCriteria(criteria._id)}}>Delete</button>
-          {/* "delete-criteria" */}
-
-        </div>
-        //</div>  
+        </div>  
         ))
        }
       </div>
@@ -155,7 +138,5 @@ const handleCheckBox = async (e, id, index) => {
   )
 }
 
-// }
-// }
-// }
+
 export default Home;
